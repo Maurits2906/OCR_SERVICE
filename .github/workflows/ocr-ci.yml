@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build OCR Docker image
-        run: docker build -t ocr-service:latest ./OCR_SERVICE
+        run: docker build -t ocr-service:latest .
 
       - name: Run flake8 in Docker
         run: docker run --rm ocr-service:latest sh -c "pip install -q flake8; flake8 /app"
